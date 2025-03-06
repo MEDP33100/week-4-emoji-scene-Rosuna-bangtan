@@ -1,0 +1,27 @@
+h1 {
+font-size: 15vh;
+text-align: center;
+font-family:verdana;
+display: flex;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c34;
+    overflow: hidden;
+    font-size: 50px;
+}
+#headphone {
+    position: absolute;
+    z-index: 1;
+    font-size: 100px;
+    transition: transform 0.2s;
+}
+.music {
+    position: absolute;
+    z-index: 0;
+    opacity: 0; }
