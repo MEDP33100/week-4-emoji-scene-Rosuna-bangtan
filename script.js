@@ -1,4 +1,5 @@
-const headphone = document.getElementById('headphone');
+document.addEventListener("DOMContentLoaded", (event) => {
+const headphone = document.getElementById('headphone'); 
 
         // Spin the headphone emoji
         gsap.to(headphone, {
