@@ -1,0 +1,32 @@
+h1 {
+font-size: 15vh;
+text-align: center;
+font-family:verdana;
+display: flex;
+}
+
+
+.emoji-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #99afdb;
+    overflow: hidden;
+    font-size: 50px;
+}
+.headphone {
+    position: absolute;
+    z-index: 1;
+    font-size: 100px;
+}
+.music {
+    position: absolute;
+    z-index: 0;}
