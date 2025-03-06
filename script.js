@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>music</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="script.js"></script>
-</head>
-<body>
-    <div id="headphone">🎧</div>
-    <div class="music">🎶</div>
-    <div class="music">🎶</div>
-    <div class="music">🎶</div>
-    <div class="music">🎶</div>
-    </div>
-     <script>
-        // GSAP Animation for the headphone emoji
-        const headphone = document.getElementById('headphone');
+document.addEventListener("DOMContentLoaded", (event) => {
+const headphone = document.getElementById('headphone'); 
 
         // Spin the headphone emoji
         gsap.to(headphone, {
@@ -25,18 +8,19 @@
             repeat: -1,
             ease: "linear"
         });
+
+        // Function to show music emojis
         function showMusicEmojis() {
             const musicEmojis = document.querySelectorAll('.music');
             musicEmojis.forEach((emoji, index) => {
                 const angle = (index / musicEmojis.length) * 360; // Distribute around the circle
                 const distance = 150; // Distance from the center
-
-                // Set initial position
+                
                 const x = distance * Math.cos(gsap.utils.toRadians(angle));
                 const y = distance * Math.sin(gsap.utils.toRadians(angle));
                 emoji.style.transform = `translate(${x}px, ${y}px)`;
                 
-              
+                // Animate floating effect
                 gsap.to(emoji, {
                     opacity: 1, // Fade in
                     y: "+=30", // Float up
@@ -44,10 +28,10 @@
                     yoyo: true,
                     repeat: -1,
                     ease: "sine.inOut",
-                    delay: Math.random() * 2 // Random delay for each emoji
+                    delay: Math.random() * 2 
                 });
 
-                // Animate circular movement
+              
                 gsap.to(emoji, {
                     rotation: 360,
                     duration: 10,
@@ -64,7 +48,6 @@
                 });
             });
         }
-
         function hideMusicEmojis() {
             const musicEmojis = document.querySelectorAll('.music');
             musicEmojis.forEach(emoji => {
@@ -75,8 +58,6 @@
             });
         }
 
+        // Show music emojis on mouse enter and hide on mouse leave
         headphone.addEventListener('mouseenter', showMusicEmojis);
         headphone.addEventListener('mouseleave', hideMusicEmojis);
-    </script>
-</body>
-</html>
